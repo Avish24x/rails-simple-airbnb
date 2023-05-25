@@ -1,0 +1,26 @@
+<h1>All Flats</h1>
+
+<div class="flats-container">
+  <% @flats.each do |flat| %>
+    <div class="flat-card">
+      <div class="flat-image">
+
+        <%= image_tag('https://images.unsplash.com/photo-1674230227190-05b589f2f730?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGNvc3klMjBmbGF0c3xlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60', alt: 'Flat Image') %>
+      </div>
+      <div class="flat-details">
+        <h2 class="flat-name"><%= flat.name %></h2>
+        <p class="flat-address"><%= flat.address %></p>
+        <p class="flat-description"><%= flat.description %></p>
+        <div class="flat-info">
+          <p class="price-per-night">$<%= flat.price_per_night %>/night</p>
+          <p class="guests"><%= flat.number_of_guests %> Guests</p>
+           <img src="<%= flat.picture_url %>" alt="Flat Image">
+          <%= link_to 'Edit', edit_flat_path(flat) %>
+
+
+      <%= link_to 'Delete', flat, method: :delete, data: { confirm: 'Are you sure you want to delete this flat?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,42 @@
+
+<%= form_with(model: flat, url: flats_path, class: "flat-form") do |form| %>
+
+
+<%= form_with(model: @flat, url: flats_path, class: "flat-form") do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_night %>
+    <%= form.number_field :price_per_night, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_guests %>
+    <%= form.number_field :number_of_guests, class: "form-control" %>
+  </div>
+
+<div class="field">
+    <%= form.label :picture_url %>
+    <%= form.text_field :picture_url, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+  <%= form.submit "Create Flat", class: "btn btn-primary" %>
+<% end %>
+
+<% end %>
